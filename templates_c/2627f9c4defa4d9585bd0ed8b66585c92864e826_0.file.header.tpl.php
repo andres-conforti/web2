@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-10-29 22:18:16
+/* Smarty version 3.1.33, created on 2019-10-31 20:43:41
   from 'C:\TUDAI\xampp\htdocs\web2\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5db8ac98737663_67354458',
+  'unifunc' => 'content_5dbb396d01d2a3_43402024',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2627f9c4defa4d9585bd0ed8b66585c92864e826' => 
     array (
       0 => 'C:\\TUDAI\\xampp\\htdocs\\web2\\templates\\header.tpl',
-      1 => 1539911637,
+      1 => 1572551005,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5db8ac98737663_67354458 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dbb396d01d2a3_43402024 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <html lang="en">
   <head>
@@ -38,6 +38,5 @@ function content_5db8ac98737663_67354458 (Smarty_Internal_Template $_smarty_tpl)
 >
     <link rel="stylesheet" href="./css/style.css">
     <title>HARDWARE DE PC</title>
-  </head>
-<?php }
+  </head><?php }
 }
