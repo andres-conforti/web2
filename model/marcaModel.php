@@ -12,13 +12,13 @@ class marcaModel extends Model
   }
 
   function GetMarcas(){
-    $sentencia = $this->db->prepare( "select * from marca");
+    $sentencia = $this->db->prepare( "SELECT * from marca");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
   function GetMarca($producto){
     $id_marca =$producto[0]["id_marca"];
-    $sentencia = $this->db->prepare( "select * from marca where id_marca=?");
+    $sentencia = $this->db->prepare( "SELECT * from marca where id_marca=?");
     $sentencia->execute(array($id_marca));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
@@ -28,11 +28,11 @@ class marcaModel extends Model
     $sentencia->execute(array($nombreMarca,$descripcion,$imagenMarca));
   }
   function borrarMarca($id_marca){
-    $sentencia = $this->db->prepare( "delete from marca where id_marca=?");
+    $sentencia = $this->db->prepare( "DELETE from marca where id_marca=?");
     $sentencia->execute(array($id_marca));
   }
   function editarMarca($nombre,$descripcion,$imagen,$id_marca){
-    $sentencia = $this->db->prepare( "update marca set nombre = ?, descripcion = ?, imagen = ? where id_marca=?");
+    $sentencia = $this->db->prepare( "UPDATE marca set nombre = ?, descripcion = ?, imagen = ? where id_marca=?");
     $sentencia->execute(array($nombre,$descripcion,$imagen,$id_marca));
   }
 

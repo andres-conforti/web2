@@ -18,7 +18,7 @@ class usersModel
   }
 
   function GetUsuarios(){
-    $sentencia = $this->db->prepare( "select * from usuario");
+    $sentencia = $this->db->prepare( "SELECT * from usuario");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
@@ -29,7 +29,7 @@ class usersModel
   }*/
 
   function GetUser($user){
-    $sentencia = $this->db->prepare( "select * from usuario where username=? limit 1");//user name(en el metodo de arriba tambien)
+    $sentencia = $this->db->prepare( "SELECT * from usuario where username=? limit 1");//user name(en el metodo de arriba tambien)
     $sentencia->execute(array($user));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }

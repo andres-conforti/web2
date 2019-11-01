@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2018-10-19 03:16:58
+/* Smarty version 3.1.33, created on 2019-11-01 19:24:47
   from 'C:\xampp\htdocs\web2\templates\Admin\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5bc9308aaf0c99_98485865',
+  'unifunc' => 'content_5dbc786f0e13a8_26652116',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2ffa0a020816295ca3bce71769abb14368ad7636' => 
     array (
       0 => 'C:\\xampp\\htdocs\\web2\\templates\\Admin\\index.tpl',
-      1 => 1539911637,
+      1 => 1572547394,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5bc9308aaf0c99_98485865 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dbc786f0e13a8_26652116 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:./navAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -38,7 +38,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['producto']->value) {
 " alt="<?php echo $_smarty_tpl->tpl_vars['producto']->value['nombre'];?>
 ">
   <nav class="col-md-6">
-    <a  href="detalleProductoAdmin/<?php echo $_smarty_tpl->tpl_vars['producto']->value['id_producto'];?>
+    <a  href="productoAdmin/<?php echo $_smarty_tpl->tpl_vars['producto']->value['id_producto'];?>
 "><li class="list-group-item"><h3><?php echo $_smarty_tpl->tpl_vars['producto']->value['nombre'];?>
  - $<?php echo $_smarty_tpl->tpl_vars['producto']->value['precio'];?>
 <h3></li></a>

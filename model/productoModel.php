@@ -12,12 +12,12 @@ class productoModel extends Model
 
   function GetProductos(){
 
-    $sentencia = $this->db->prepare( "select * from producto");
+    $sentencia = $this->db->prepare( "SELECT * from producto");
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
   function GetProducto($id_producto){
-    $sentencia = $this->db->prepare( "select * from producto where id_producto=?");
+    $sentencia = $this->db->prepare( "SELECT * from producto where id_producto=?");
     $sentencia->execute(array($id_producto));
 
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -27,11 +27,11 @@ class productoModel extends Model
     $sentencia->execute(array($nombreProducto,$descripcion, $precio, $marca, $imagen));
   }
   function borrarProducto($id_producto){
-    $sentencia = $this->db->prepare( "delete from producto where id_producto=?");
+    $sentencia = $this->db->prepare( "DELETE from producto where id_producto=?");
     $sentencia->execute(array($id_producto));
   }
   function formEditarProducto($nombre,$descripcion,$precio,$imagen,$id_producto,$id_marca){
-    $sentencia = $this->db->prepare( "update producto set nombre = ?, descripcion = ?, precio = ?, id_marca = ?, imagen = ? where id_producto=?");
+    $sentencia = $this->db->prepare( "UPDATE producto set nombre = ?, descripcion = ?, precio = ?, id_marca = ?, imagen = ? where id_producto=?");
     $sentencia->execute(array($nombre,$descripcion,$precio,$imagen,$id_producto,$id_marca));
   }
 
