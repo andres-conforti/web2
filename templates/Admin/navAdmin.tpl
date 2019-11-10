@@ -1,20 +1,34 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <ul class="nav navbar-nav">
-    <li><a href="/web2/indexAdmin">HOME</a></li>
-    <li><a href="/web2/marcasAdmin">MARCAS</a></li>
-    <li><a href="/web2/crearProducto">Crear Producto</a></li>
-    <li><a href="/web2/editarProducto">Editar Producto</a></li>
-    <li><a href="/web2/crearMarca">Crear Marca</a></li>
-    <li><a href="/web2/editarMarca">Editar Marca</a></li>
-    <li><a href="/web2/logout">Cerra Sesion</a></li>
-  </ul>
-  <form class="col-md-2 col-lg-2 form-inline"action="filtrarAdmin" method="POST">
-    <select name="filtrarAdmin" class="form-control filter">
-      <option value="" selected disabled hidden>Filtrar por marca</option>
-      {foreach from=$marcas item=marca}
-      <option value="{$marca['id_marca']}">{$marca['nombre']}</option>
-      {/foreach}
-    </select>
-    <button class="btn btn-primary btn-sm" type="submit">Filtrar</button>
-    </form>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="./indexAdmin">HOME</a>
+      </li>
+    
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MARCAS DE GPU</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="./marcasAdmin">VER MARCAS</a>
+          <a class="dropdown-item" href="./crearMarca">CREAR MARCA</a>
+        </div>
+      </li>
+
+	    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PRODUCTOS</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="./indexAdmin">VER PRODUCTOS</a>
+          <a class="dropdown-item" href="./crearProducto">CREAR PRODUCTO</a>
+        </div>
+      </li>
+
+</li>
+		<li class="nav-item"><a href="./logout" class="nav-link">CERRAR SESION</a></li>
+
+    </ul>
+
+  </div>
 </nav>

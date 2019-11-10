@@ -1,19 +1,28 @@
 {include file="header.tpl"}
 {include file="./navbar.tpl"}
-<h2>PLACAS DE VIDEO: </h2>
-{foreach from=$productos item=producto}
-<ul class="producto">
+<div class="container-fluid producto">
+  <hr class="style14">
+  <br>
+  {foreach from=$productos item=producto}
+  <div class="row justify-content-md-center">
+    <div class="col-md-5 col-lg-5">
 
-  <img src="{$producto['imagen']}" alt="{$producto['nombre']}">
 
-  <nav class="col-md-7 col-lg-7">
-    <a href="producto/{$producto['id_producto']}" class="link"></a>
-    <li class="list-group-item">
-      <h3>{$producto['nombre']} - ${$producto['precio']}<h3>
-    </li>
-    <li class="list-group-item">{$producto['descripcion']}</li>
-  </nav>
-</ul>
+      <ul class="producto">
 
-{/foreach}
-{include file="footer.tpl"}
+        <a href="producto/{$producto['id_producto']}" class="link"></a>
+        <li class="list-group-item">
+          <h3>{$producto['nombre']} - ${$producto['precio']}<h3>
+        </li>
+        <li class="list-group-item">{$producto['descripcion']}</li>
+      </ul>
+
+    </div>
+
+    <img src="{$producto['imagen']}" alt="{$producto['nombre']}">
+  </div>
+    <br>
+  <hr class="style14">
+  <br>
+  {/foreach}
+</div>

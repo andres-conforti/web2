@@ -1,17 +1,24 @@
 {include file="header.tpl"}
-{include file="fix.tpl"}
 {include file="./navbarDetail.tpl"}
+{include file="fix.tpl"}
+<br>
+<div class="container-fluid producto">
+  <div class="row justify-content-md-center">
+    <div class="col-md-5 col-lg-5">
 
 
-<ul class="producto">
+      <ul class="producto">
 
-  <img src="../{$producto['imagen']}" alt="{$producto['nombre']}">
-  <!-- {print_r($producto)} -->
-  <nav class="col-md-6 col-lg-6">
-    <a href="#" class="link"></a>
-    <li class="list-group-item"><h3>{$producto['nombre']} - ${$producto['precio']} - {$marca['nombre']}<h3></li>
-    <li class="list-group-item">{$producto['descripcion']}</li>
-  </nav>
-</ul>
+        <li class="list-group-item">
+          <h3>{$producto['nombre']} - ${$producto['precio']} - {$marca['nombre']}<h3>
+        </li>
+        <li class="list-group-item">{$producto['descripcion']}</li>
+      </ul>
+    </div>
+    <img src="../{$producto['imagen']}" alt="{$producto['nombre']}">
+  </div>
+  <br>
+  <br>
+</div>
 
 {include file="footer.tpl"}

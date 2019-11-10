@@ -2,14 +2,33 @@
 {include file="./navAdminDetail.tpl"}
 {include file="fix.tpl"}
 {foreach from=$productos item=producto}
-<ul>
+<br>
+<div class="container-fluid producto">
+  <div class="row justify-content-md-center">
+    <div class="col-md-5 col-lg-5">
+
+
+      <ul class="producto">
+
+        <li class="list-group-item">
+          <h3>{$producto['nombre']} - ${$producto['precio']}<h3>
+        </li>
+        <li class="list-group-item">{$producto['descripcion']}</li>
+      </ul>
+            <div class="offset-1 col justify-content-md-center">
+
+        <a href="editarProducto/{$producto['id_producto']}"><button type="button"
+            class="btn btn-warning btn-sm">EDITAR</button></a>
+        <a href="borrarProducto/{$producto['id_producto']}"><button type="button"
+            class="btn btn-danger btn-sm">ELIMINAR</button></a>
+      </div>
+    </div>
+    
     <img src="../{$producto['imagen']}" alt="{$producto['nombre']}">
-  <nav class="col-md-6">
-    <li class="list-group-item">{$producto['nombre']} - ${$producto['precio']}</li>
-    <li class="list-group-item">{$producto['descripcion']}</li>
-    <a href="borrarProducto/{$producto['id_producto']}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>Eliminar</a>
-    <a href="../indexAdmin"></span>Volver</a>
-  </nav>
-</ul>
+  </div>
+  
+  <br>
+  <br>
+</div>
 {/foreach}
 {include file="footer.tpl"}

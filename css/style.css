@@ -13,36 +13,15 @@ background-color: #dbdbdb;
     width: 100%;
     height: 100%;
     z-index: 1;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0); 
     transition: all 300ms;
 }
 
 .producto .link:hover {
-    background: rgba(0,0,0,0);
+    background: rgba(0,0,0,0.1);
 }
 
 .producto img{
     width: 250px;
 }
 
-.login-form {
-    width: 340px;
-    margin: 50px auto;
-}
-.login-form form {
-    margin-bottom: 15px;
-    background: #f7f7f7;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 30px;
-}
-.login-form h2 {
-    margin: 0 0 15px;
-}
-.form-control, .btn {
-    min-height: 38px;
-    border-radius: 2px;
-}
-.btn {        
-    font-size: 15px;
-    font-weight: bold;
-}
