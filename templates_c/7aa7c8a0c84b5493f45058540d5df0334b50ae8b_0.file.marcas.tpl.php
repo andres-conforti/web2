@@ -1,32 +1,35 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-10 21:19:53
-  from 'C:\TUDAI\xampp\htdocs\web2\templates\Admin\marcas.tpl' */
+/* Smarty version 3.1.33, created on 2019-11-23 18:53:06
+  from 'C:\TUDAI\xampp\htdocs\web2\templates\Store\marcas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dc870e9ceed92_06526958',
+  'unifunc' => 'content_5dd972020a68a8_73012827',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'cd6508cd40cc8b604ca31b39ce8534a0d3793942' => 
+    '7aa7c8a0c84b5493f45058540d5df0334b50ae8b' => 
     array (
-      0 => 'C:\\TUDAI\\xampp\\htdocs\\web2\\templates\\Admin\\marcas.tpl',
-      1 => 1573330608,
+      0 => 'C:\\TUDAI\\xampp\\htdocs\\web2\\templates\\Store\\marcas.tpl',
+      1 => 1574370784,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
-    'file:./navAdmin.tpl' => 1,
+    'file:./navbar.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5dc870e9ceed92_06526958 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dd972020a68a8_73012827 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:./navAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender("file:./navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
+
+
+
 
 <div class="container">
 
@@ -48,16 +51,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['marca']->value) {
 </h3>
             <p><?php echo $_smarty_tpl->tpl_vars['marca']->value['descripcion'];?>
 </p>
-        <a href="filtrar/<?php echo $_smarty_tpl->tpl_vars['marca']->value['id_marca'];?>
-"><span aria-hidden="true"><button type="submit" class="btn btn-primary btn-block">VER PRODUCTOS</button></span></a>
-       <br>
-       <div class="offset-3 col justify-content-md-center">
-       <a href="editarMarca/<?php echo $_smarty_tpl->tpl_vars['marca']->value['id_marca'];?>
-"><span aria-hidden="true"><button type="submit" class="btn btn-warning">EDITAR</button></span></a>
-        <a href="borrarMarca/<?php echo $_smarty_tpl->tpl_vars['marca']->value['id_marca'];?>
-"><span aria-hidden="true"><button type="submit" class="btn btn-danger">ELIMINAR</button></span></a>
-        </div>
-        
+        <a href="filtrado/<?php echo $_smarty_tpl->tpl_vars['marca']->value['id_marca'];?>
+"><span aria-hidden="true"><button type="submit" class="btn btn-primary btn-block">Ver Productos</button></span></a>
         </div>
     </div>
     <br>

@@ -7,12 +7,15 @@ class ConfigApp{
     //user//
         '' => 'productoController#index',
         'index' => 'productoController#index',
-        'filtrar' => 'productoController#filtrarProductos',
         'marcas' => 'productoController#mostrarMarcas',
-        'producto' => 'productoController#detalleProducto',
         'login'=> 'signinController#login',
         'verificarLogin' => 'signinController#verificarLogin',
         'logout' => 'signinController#logout',
+
+        'producto' => 'productoController#detalleProducto',
+        //'filtrar' => 'productoController#filtrarProductos',
+        'filtrado' => 'productoController#detalleMarca',
+
 
     //admin//
 
@@ -39,7 +42,8 @@ class ConfigApp{
         'indexAdmin' => 'admController#index',
         'marcasAdmin' => 'admController#marcas',
         'productoAdmin'=>'admController#detalleProducto',
-        'filtrarAdmin' => 'admController#filtrarAdmin',
+        //'filtrarAdmin' => 'admController#filtrarAdmin',
+        'filtradoAdmin' => 'admController#detalleMarca',
         
 
   ];

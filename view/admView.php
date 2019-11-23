@@ -60,6 +60,11 @@ class admView
     $smarty->assign('productos',$producto);
     $smarty->display('templates/Admin/detalleProducto.tpl');
   }
+  function filtrado($productos){
+    $smarty = new Smarty();
+    $smarty->assign('productos',$productos);
+    $smarty->display('templates/Admin/filtradoAdmin.tpl');
+  }
 }
 
 ?>

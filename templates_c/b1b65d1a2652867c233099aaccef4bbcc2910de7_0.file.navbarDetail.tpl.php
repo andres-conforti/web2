@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-10 21:10:50
+/* Smarty version 3.1.33, created on 2019-11-23 18:53:03
   from 'C:\TUDAI\xampp\htdocs\web2\templates\Store\navbarDetail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5dc86ecae87a82_92494827',
+  'unifunc' => 'content_5dd971ffa6c8a8_39299406',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5dc86ecae87a82_92494827 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5dd971ffa6c8a8_39299406 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <nav class="navbar navbar-expand-md navbar-dark bg-dark">
    <ul class="navbar-nav mr-auto">
      <li><a class="navbar-brand" href="../index">HOME</a></li>

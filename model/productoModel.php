@@ -22,6 +22,13 @@ class productoModel extends Model
 
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
+
+  function GetProductoFiltrado($id_marca){
+    $sentencia = $this->db->prepare( "SELECT * from producto where id_marca=?");
+    $sentencia->execute(array($id_marca));
+
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+  }
   function altaProducto($nombreProducto,$descripcion, $precio, $marca, $imagen){
     $sentencia = $this->db->prepare("INSERT INTO producto(nombre, descripcion, precio, id_marca, imagen) VALUES(?,?,?,?,?)");
     $sentencia->execute(array($nombreProducto,$descripcion, $precio, $marca, $imagen));

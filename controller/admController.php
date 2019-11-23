@@ -12,6 +12,7 @@ class admController extends sessionController
   function __construct()
   {
     parent::__construct();
+    
     $this->view = new admView();
     $this->productoModel = new productoModel();
     $this->marcaModel = new marcaModel();
@@ -129,6 +130,14 @@ class admController extends sessionController
     $producto = $this->productoModel->GetProducto($id_producto);
     $this->view->detalleProducto($this->titulo,$marcas,$producto);
   }
+
+  public function detalleMarca($params){
+    $id_marca = $params[0];
+    $producto = $this->model->GetProductoFiltrado($id_marca);
+    //echo "<pre>".print_r($producto,TRUE)."</pre>";
+    $this->view->filtrado($producto);
+  }
+  
 }
 
 ?>

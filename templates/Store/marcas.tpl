@@ -16,7 +16,7 @@
         <div class="col-md-5">
             <h3>{$marca['nombre']}</h3>
             <p>{$marca['descripcion']}</p>
-        <a href="/{$marca['id_marca']}"><span aria-hidden="true"><button type="submit" class="btn btn-primary btn-block">Ver Productos</button></span></a>
+        <a href="filtrado/{$marca['id_marca']}"><span aria-hidden="true"><button type="submit" class="btn btn-primary btn-block">Ver Productos</button></span></a>
         </div>
     </div>
     <br>

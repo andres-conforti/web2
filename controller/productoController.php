@@ -19,6 +19,7 @@ class productoController extends Controller
     $marcas = $this->marcaModel->GetMarcas();
     $this->view->Index($this->titulo,$productos,$marcas);
   }
+
   public function filtrarProductos(){
     if (isset($_POST['filtrar'])) {
       $categoriaFiltrada = $_POST['filtrar'];
@@ -29,15 +30,26 @@ class productoController extends Controller
       header('Location: '.HOME);
     }
   }
+
   function mostrarMarcas(){
     $marcas = $this->marcaModel->GetMarcas();
     $this->view->mostrarMarcas($this->titulo,$marcas);
   }
+
   public function detalleProducto($params){
     $id_producto = $params[0];
     $producto =$this->model->GetProducto($id_producto);
     $marca=$this->marcaModel->GetMarca($producto);
+    //echo "<pre>".print_r($producto,TRUE)."</pre>";
     $this->view->detalleProducto($producto[0],$marca[0]);
   }
+
+  public function detalleMarca($params){
+    $id_marca = $params[0];
+    $producto = $this->model->GetProductoFiltrado($id_marca);
+    //echo "<pre>".print_r($producto,TRUE)."</pre>";
+    $this->view->filtrado($producto);
+  }
+
 }
 ?>
