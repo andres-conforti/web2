@@ -1,5 +1,5 @@
-{include file="header.tpl"}
-{include file="./navAdmin.tpl"}
+{include file="../header.tpl"}
+{include file="./navAdminDetail.tpl"}
 {include file="fix.tpl"}
 <br>
 <div class="container-fluid producto">
@@ -18,9 +18,9 @@
       </ul>
       <div class="offset-1 col justify-content-md-center">
 
-        <a href="editarProducto/{$producto['id_producto']}"><button type="button"
+        <a href="../editarProducto/{$producto['id_producto']}"><button type="button"
             class="btn btn-warning btn-sm">EDITAR</button></a>
-        <a href="borrarProducto/{$producto['id_producto']}"><button type="button"
+        <a href="../borrarProducto/{$producto['id_producto']}"><button type="button"
             class="btn btn-danger btn-sm">ELIMINAR</button></a>
 
 

@@ -1,27 +1,29 @@
-{include file="header.tpl"}
-{include file="./navAdmin.tpl"}
-<h1>{$titulo}</h1>
+{include file="../header.tpl"}
+{include file="./navAdminDetail.tpl"}
+{include file="fix.tpl"}
+
 <div class="container">
   <h2>Formulario</h2>
-  <form method="post" action="formEditarProducto">
-    <select name="id_producto" class="form-control filter">
-      <option value="id_producto" selected disabled hidden>Filtrar por Producto</option>
-      {foreach from=$productos item=producto}
-      <option value="{$producto['id_producto']}" name="marca" id= "id_producto" for="id_producto">{$producto['nombre']}</option>
-      {/foreach}
-    </select>
+  {foreach from=$producto item=item}
+  <form method="post" action="formEditarProducto" enctype="multipart/form-data">
+
+    
+  
     <div class="form-group">
       <label for="nombreProducto">Nombre</label>
-      <input type="text" class="form-control" id="nombreProducto" name="nombreProducto">
+      <input type="text" class="form-control" id="nombreProducto" name="nombreProducto" value="{$item['nombre']}">
     </div>
     <div class="form-group">
       <label for="descripcionProducto">Descripcion</label>
-      <input type="text" class="form-control" id="descripcionProducto" name="descripcionProducto">
+      <textarea rows="6" cols="50" type="text" class="form-control" id="descripcionProducto" name="descripcionProducto">{$item['descripcion']}</textarea>
     </div>
     <div class="form-group">
       <label for="precio">Precio</label>
-      <input type="text" class="form-control" id="precio" name="precio">
+      <input type="text" class="form-control" id="precio" name="precio" value="{$item['precio']}">
     </div>
+    
+
+    
     <div class="form-group">
       <label for="marca">Marca</label>
       <select name="marca" class="form-control filter">
@@ -33,9 +35,12 @@
     </div>
     <div class="form-group">
       <label for="imagen">Imagen</label>
-      <input value="img/" type="text" class="form-control" id="imagen" name="imagen">
+      <br>
+      <input type="file" name="input_name" id="imageToUpload">
+      
     </div>
     <button type="submit" class="btn btn-primary">Editar Producto</button>
   </form>
+  {/foreach}
 </div>
 {include file="footer.tpl"}

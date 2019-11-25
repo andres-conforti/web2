@@ -11,6 +11,7 @@
 
 
       <ul class="producto">
+        <a href="/producto/{$producto['id_producto']}" class="link"></a>
         <li class="list-group-item">
           <h3>{$producto['nombre']} - ${$producto['precio']}<h3>
         </li>
@@ -19,14 +20,13 @@
 
     </div>
 
-    <img src="../{$producto['imagen']}" alt="{$producto['nombre']}">
+    <img src="/{$producto['imagen']}" alt="{$producto['nombre']}">
   </div>
   <br>
   <hr class="style14">
   <br>
   {/foreach}
-
+</div>
 {include file="footer.tpl"}
 
 
-</div>

@@ -20,17 +20,6 @@ class productoController extends Controller
     $this->view->Index($this->titulo,$productos,$marcas);
   }
 
-  public function filtrarProductos(){
-    if (isset($_POST['filtrar'])) {
-      $categoriaFiltrada = $_POST['filtrar'];
-      $productos = $this->model->GetProductos();
-      $marcas = $this->marcaModel->GetMarcas();
-      $this->view->productosFiltrados($this->titulo,$marcas,$productos,$categoriaFiltrada);
-    }else {
-      header('Location: '.HOME);
-    }
-  }
-
   function mostrarMarcas(){
     $marcas = $this->marcaModel->GetMarcas();
     $this->view->mostrarMarcas($this->titulo,$marcas);

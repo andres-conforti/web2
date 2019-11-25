@@ -1,6 +1,5 @@
 {include file="header.tpl"}
-{include file="./navbarDetail.tpl"}
-{include file="fix.tpl"}
+{include file="navbar.tpl"}
 <br>
 <div class="container-fluid producto">
   <div class="row justify-content-md-center">
@@ -15,7 +14,7 @@
         <li class="list-group-item">{$producto['descripcion']}</li>
       </ul>
     </div>
-    <img src="../{$producto['imagen']}" alt="{$producto['nombre']}">
+    <img src="{BASE_URL}{$producto['imagen']}" alt="{$producto['nombre']}">
   </div>
   <br>
   <br>

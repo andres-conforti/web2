@@ -13,7 +13,6 @@ class ConfigApp{
         'logout' => 'signinController#logout',
 
         'producto' => 'productoController#detalleProducto',
-        //'filtrar' => 'productoController#filtrarProductos',
         'filtrado' => 'productoController#detalleMarca',
 
 
@@ -29,10 +28,13 @@ class ConfigApp{
         //Borrar//
         'borrarProducto' => 'admController#borrarProducto',
         'borrarMarca' => 'admController#borrarMarca',
+        'borrarImagen' => 'admController#borrarImagen',
+        
 
         //Editar//
         'editarProducto'=> 'admController#editarProducto',
         'formEditarProducto' => 'admController#formEditarProducto',
+        'cambiarImagen' => 'admController#cambiarImagen',
         
         'editarMarca' => 'admController#editarMarca',
         'formEditarMarca' => 'admController#formEditarMarca',
@@ -42,7 +44,6 @@ class ConfigApp{
         'indexAdmin' => 'admController#index',
         'marcasAdmin' => 'admController#marcas',
         'productoAdmin'=>'admController#detalleProducto',
-        //'filtrarAdmin' => 'admController#filtrarAdmin',
         'filtradoAdmin' => 'admController#detalleMarca',
         
 

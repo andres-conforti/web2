@@ -17,7 +17,9 @@ class admController extends sessionController
     $this->productoModel = new productoModel();
     $this->marcaModel = new marcaModel();
     $this->usuarioModel = new usersModel();
-    $this->titulo = "HARDWARE DE PC";
+
+    
+
   }
   function index(){
     $usuarios = $this->usuarioModel->GetUsuarios();
@@ -40,14 +42,22 @@ class admController extends sessionController
     $descripcion = $_POST["descripcionProducto"];
     $precio = $_POST["precio"];
     $marca = $_POST["marca"];
-    $imagen = $_POST["imagen"];
-    if ($nombreProducto!="" && $descripcion!="" && $precio!="" && $marca!="" && $imagen!="") {
-      $this->productoModel->altaProducto($nombreProducto,$descripcion, $precio, $marca, $imagen);
-      header('Location: '.HOMEADMIN);
-    }else{
-      echo "error";
+
+    if (!empty($nombreProducto) && !empty($descripcion) && !empty($precio) && !empty($marca)) {
+        if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg" 
+            || $_FILES['input_name']['type'] == "image/png" ) {
+              $this->productoModel->altaProducto($nombreProducto, $descripcion, $precio, $marca, $_FILES['input_name']['tmp_name']);
+              header('Location: '.HOMEADMIN);
+        }
+        else {
+          $this->productoModel->altaProducto($nombreProducto, $descripcion, $precio, $marca);
+          header('Location: '.HOMEADMIN);
+        }
     }
-  }
+    else
+    echo "error";
+}
+
 
   function crearProducto(){
     $marcas = $this->marcaModel->GetMarcas();
@@ -69,16 +79,7 @@ class admController extends sessionController
     $marcas = $this->marcaModel->GetMarcas();
     $this->view->crearMarca($this->titulo,$marcas);
   }
-  function filtrarAdmin(){
-    if (isset($_POST['filtrarAdmin'])) {
-      $categoriaFiltrada = $_POST['filtrarAdmin'];
-      $productos = $this->productoModel->GetProductos();
-      $marcas = $this->marcaModel->GetMarcas();
-      $this->view->productosFiltrados($this->titulo,$marcas,$productos,$categoriaFiltrada);
-    }else {
-      header('Location: '.HOME);
-    }
-  }
+
   function marcas(){
     $marcas = $this->marcaModel->GetMarcas();
     $this->view-> marcas($this->titulo,$marcas);
@@ -90,19 +91,30 @@ class admController extends sessionController
     $descripcion = $_POST["descripcionProducto"];
     $precio = $_POST["precio"];
     $marca = $_POST["marca"];
-    $imagen = $_POST["imagen"];
-    if ($nombreProducto!="" && $descripcion!="" && $precio!="" && $marca!="" && $imagen!="" && $id_producto!="") {
-      $this->productoModel->formEditarProducto($nombreProducto,$descripcion, $precio, $marca, $imagen, $id_producto);
-      header('Location: '.HOMEADMIN);
-    }else{
-      echo "error";
-    }
+
+    if (!empty($nombreProducto) && !empty($descripcion) && !empty($precio) && !empty($marca)) {
+      if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg" 
+          || $_FILES['input_name']['type'] == "image/png" ) {
+            $this->productoModel->formEditarProducto($nombreProducto, $descripcion, $precio, $marca, $_FILES['input_name']['tmp_name']);
+            header('Location: '.HOMEADMIN);
+      }
+      else {
+        $this->productoModel->formEditarProducto($nombreProducto, $descripcion, $precio, $marca);
+        header('Location: '.HOMEADMIN);
+      }
+  }
+  else
+  echo "error";
   }
 
-  function editarProducto(){
+
+      //* EDITAR PRODUCTOS *//
+      
+  public function editarProducto($params){
+    $id_producto = $params[0];
+    $producto = $this->productoModel->GetProducto($id_producto);
     $marcas = $this->marcaModel->GetMarcas();
-    $productos = $this->productoModel->GetProductos();
-    $this->view-> editarProducto($this->titulo, $marcas, $productos);
+    $this->view->editarProducto($producto,$marcas);
   }
 
 
@@ -133,11 +145,26 @@ class admController extends sessionController
 
   public function detalleMarca($params){
     $id_marca = $params[0];
-    $producto = $this->model->GetProductoFiltrado($id_marca);
+    $producto = $this->productoModel->GetProductoFiltrado($id_marca);
     //echo "<pre>".print_r($producto,TRUE)."</pre>";
     $this->view->filtrado($producto);
   }
+
   
+  function borrarImagen($params){
+    $idProducto = $params[0];
+    $imagen = $params[1];
+    $this->productoModel->borrarImagen($idProducto);
+    header('Location: '.PRODUCTOADMIN.'/'.$idProducto);
+  }
+
+  function cambiarImagen($params){
+    $idProducto = $params[0];
+    $newImg = $_FILES['input_name']['tmp_name'];
+    $this->productoModel->cambiarImagen($idProducto,$img,$newImg);
+    header('Location: '.DETALLEADMIN.'/'.$idProducto);
+  }
+
 }
 
 ?>

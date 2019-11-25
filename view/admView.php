@@ -1,5 +1,6 @@
 <?php
 require_once ('./libs/Smarty.class.php');
+require_once "controller/controller.php";
 
 /**
 *
@@ -12,6 +13,7 @@ class admView
     $smarty->assign('usuarios',$usuarios);
     $smarty->assign('productos',$productos);
     $smarty->assign('marcas',$marcas);
+    $smarty->assign('BASE_URL',BASE_URL);
     $smarty->display('templates/Admin/index.tpl');
   }
   function productosFiltrados($titulo,$marcas,$productos,$categoriaFiltrada){
@@ -19,6 +21,7 @@ class admView
     $smarty->assign('titulo',$titulo);
     $smarty->assign('productos',$productos);
     $smarty->assign('marcas',$marcas);
+    $smarty->assign('BASE_URL',BASE_URL);
     $smarty->assign('categoriaFiltrada', $categoriaFiltrada);
     $smarty->display('templates/Admin/productosFiltrados.tpl');
   }
@@ -26,36 +29,42 @@ class admView
     $smarty = new Smarty();
     $smarty->assign('titulo',$titulo);
     $smarty->assign('marcas',$marcas);
+    $smarty->assign('BASE_URL',BASE_URL);
     $smarty->display('templates/Admin/altaProductos.tpl');
   }
   function crearMarca($titulo, $marcas){
     $smarty = new Smarty();
     $smarty->assign('titulo',$titulo);
     $smarty->assign('marcas',$marcas);
+    $smarty->assign('BASE_URL',BASE_URL);
     $smarty->display('templates/Admin/altaMarcas.tpl');
   }
   function marcas($titulo, $marcas){
     $smarty = new Smarty();
     $smarty->assign('titulo',$titulo);
     $smarty->assign('marcas',$marcas);
+    $smarty->assign('BASE_URL',BASE_URL);
     $smarty->display('templates/Admin/marcas.tpl');
   }
-  function editarProducto($titulo, $marcas, $productos){
+  function editarProducto($producto, $marcas){
     $smarty = new Smarty();
-    $smarty->assign('titulo',$titulo);
+    $smarty->assign('producto',$producto);
     $smarty->assign('marcas',$marcas);
-    $smarty->assign('productos',$productos);
+    $smarty->assign('BASE_URL',BASE_URL);
     $smarty->display('templates/Admin/editarProducto.tpl');
   }
+  
   function editarMarca($titulo, $marcas){
     $smarty = new Smarty();
     $smarty->assign('titulo',$titulo);
     $smarty->assign('marcas',$marcas);
+    $smarty->assign('BASE_URL',BASE_URL);
     $smarty->display('templates/Admin/editarMarca.tpl');
   }
   function detalleProducto($titulo, $marcas,$producto){
     $smarty = new Smarty();
     $smarty->assign('titulo',$titulo);
+    $smarty->assign('BASE_URL', BASE_URL);
     $smarty->assign('marcas',$marcas);
     $smarty->assign('productos',$producto);
     $smarty->display('templates/Admin/detalleProducto.tpl');
@@ -63,6 +72,7 @@ class admView
   function filtrado($productos){
     $smarty = new Smarty();
     $smarty->assign('productos',$productos);
+    $smarty->assign('BASE_URL',BASE_URL);
     $smarty->display('templates/Admin/filtradoAdmin.tpl');
   }
 }

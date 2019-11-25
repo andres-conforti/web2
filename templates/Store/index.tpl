@@ -1,5 +1,7 @@
 {include file="header.tpl"}
-{include file="./navbar.tpl"}
+{include file="TEMPLATES/navbar.tpl"}
+
+<br>
 <div class="container-fluid producto">
   <hr class="style14">
   <br>
@@ -9,7 +11,6 @@
 
 
       <ul class="producto">
-
         <a href="producto/{$producto['id_producto']}" class="link"></a>
         <li class="list-group-item">
           <h3>{$producto['nombre']} - ${$producto['precio']}<h3>
@@ -19,7 +20,7 @@
 
     </div>
 
-    <img src="{$producto['imagen']}" alt="{$producto['nombre']}">
+    <img src="{BASE_URL}{$producto['imagen']}" alt="{$producto['nombre']}">
   </div>
     <br>
   <hr class="style14">
