@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-{include file="./navAdmin.tpl"}
+{include file="navAdmin.tpl"}
 
 <div class="container">
   <h1>CREAR MARCA DE GPU:</h1>

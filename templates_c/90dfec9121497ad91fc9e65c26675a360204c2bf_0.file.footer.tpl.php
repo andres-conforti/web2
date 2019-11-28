@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-25 21:59:46
-  from 'C:\TUDAI\xampp\htdocs\web2\templates\footer.tpl' */
+/* Smarty version 3.1.33, created on 2019-11-28 23:34:27
+  from 'C:\TUDAI\xampp\htdocs\web2019\templates\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ddc40c21fe155_99913769',
+  'unifunc' => 'content_5de04b7340aca6_68118341',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'd51d76dd4d3564d63f6ea96f6a5c7234918539de' => 
+    '90dfec9121497ad91fc9e65c26675a360204c2bf' => 
     array (
-      0 => 'C:\\TUDAI\\xampp\\htdocs\\web2\\templates\\footer.tpl',
+      0 => 'C:\\TUDAI\\xampp\\htdocs\\web2019\\templates\\footer.tpl',
       1 => 1573255897,
       2 => 'file',
     ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ddc40c21fe155_99913769 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de04b7340aca6_68118341 (Smarty_Internal_Template $_smarty_tpl) {
 echo '<script'; ?>
  src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"><?php echo '</script'; ?>
 >

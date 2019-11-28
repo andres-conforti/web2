@@ -17,6 +17,16 @@ class signinView
     $this->Smarty->assign('BASE_URL',BASE_URL);
     $this->Smarty->display('templates/Login/login.tpl');
   }
+
+  /* Este es el completo (2018)
+    function mostrarLogin($Message = ''){
+
+    $this->Smarty->assign('titulo',"INGRESA CON TU CUENTA:"); // El 'Titulo' del assign puede ser cualquier valor
+    $this->Smarty->assign('titulo2',"REGISTRATE EN LA PAGINA:");
+    $this->Smarty->assign('Message',$Message); // El 'Titulo' del assign puede ser cualquier valor
+    $this->Smarty->display('templates/Login/login.tpl');
+  }
+  */
 }
 
  ?>

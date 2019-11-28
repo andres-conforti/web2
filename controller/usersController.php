@@ -13,6 +13,7 @@ class usersController extends sessionController
   {
     parent::__construct();
 
+    $this->view = new signinView();
     $this->view = new UsersView();
     $this->model = new usersModel();
     $this->Titulo = "Lista de Usuario";
@@ -23,18 +24,39 @@ class usersController extends sessionController
       $this->view->Mostrar($this->Titulo, $Usuarios);
   }
 
+  function InsertUsuario()
+    {
+      $user    = $_POST["usuario"];
+      $pass    = $_POST["pass"];
+      $Usuario = $this->model->GetUser($user);
 
+        if (isset($_POST["usuario"]) && isset($_POST["pass"]) && $Usuario[0]["username"] == NULL) {
+          session_start();
+          $_SESSION["nombre"] = $user;
+          header('Location: '.HOMELOGUEADO);
 
-  function InsertUsuario(){
-    $nombre = $_POST["nombre"];
-    $pass = $_POST["pass"];
+            if (isset($_POST["usuario"]) && isset($_POST["pass"])&&$Usuario[0]["username"] !== NULL) {
+                    $this->view->mostrarLogin("El usuario ya se encuentra registrado");
+                    header('Location: '.HOME);
 
+            } else {
+                if (!empty($pass)) {
+                    $hash      = password_hash($pass, PASSWORD_DEFAULT);
+                    $isAdmin          = '0';
+                    $userRegistrado = $this->model->InsertarUsuario($user,$hash,$isAdmin);
 
-    $this->model->InsertarUsuario($nombre,$pass);
+                          if (isset($userRegistrado)) {
+                            session_start();
+                            header('Location: '.HOMELOGUEADO);
 
-    header("Location: http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
-  }
+                            } else {
 
-}
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+
 
  ?>

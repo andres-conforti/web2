@@ -1,12 +1,11 @@
 <?php
 
-
-require_once "config/ConfigApp.php";
-require_once "controller/usersController.php";
-require_once "controller/signinController.php";
-require_once "controller/sessionController.php";
+require_once "config/configApp.php";
 require_once "controller/admController.php";
 require_once 'controller/productoController.php';
+require_once "controller/sessionController.php";
+require_once "controller/signinController.php";
+require_once "controller/usersController.php";
 
 function parseURL($url)
 {

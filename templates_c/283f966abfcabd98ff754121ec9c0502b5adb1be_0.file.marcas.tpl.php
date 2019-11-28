@@ -1,31 +1,31 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-25 22:02:13
-  from 'C:\TUDAI\xampp\htdocs\web2\templates\Store\marcas.tpl' */
+/* Smarty version 3.1.33, created on 2019-11-29 00:44:29
+  from 'C:\TUDAI\xampp\htdocs\web2019\templates\Store\marcas.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ddc41557d25d3_65818813',
+  'unifunc' => 'content_5de05bdd285782_97443119',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '7aa7c8a0c84b5493f45058540d5df0334b50ae8b' => 
+    '283f966abfcabd98ff754121ec9c0502b5adb1be' => 
     array (
-      0 => 'C:\\TUDAI\\xampp\\htdocs\\web2\\templates\\Store\\marcas.tpl',
-      1 => 1574370784,
+      0 => 'C:\\TUDAI\\xampp\\htdocs\\web2019\\templates\\Store\\marcas.tpl',
+      1 => 1574717570,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
-    'file:./navbar.tpl' => 1,
+    'file:navbar.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ddc41557d25d3_65818813 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de05bdd285782_97443119 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:./navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender("file:navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 

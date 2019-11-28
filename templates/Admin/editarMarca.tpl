@@ -1,6 +1,5 @@
-{include file="../header.tpl"}
-{include file="./navAdminDetail.tpl"}
-{include file="fix.tpl"}
+{include file="header.tpl"}
+{include file="navAdmin.tpl"}
 <h1>{$titulo}</h1>
 <div class="container">
   <h2>Formulario</h2>

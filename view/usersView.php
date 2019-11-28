@@ -14,6 +14,17 @@ class usersView
     $smarty->display('templates/MostrarUsuarios.tpl');
   }
 
+  function indexLogueado($titulo,$productos,$marcas,$usuarios){
+    $smarty = new Smarty();
+    $smarty->assign('titulo',$titulo);
+    $smarty->assign('usuarios',$usuarios);
+    $smarty->assign('productos',$productos);
+    $smarty->assign('marcas',$marcas);
+    $smarty->assign('page','indexLogueado');
+    $smarty->display('templates/User/index.tpl');
+    //$smarty->display('templates/Admin/administrar.tpl');
+}
+
     function Header(){
       $smarty = new Smarty();
       $smarty->assign('BASE_URL',BASE_URL);

@@ -12,21 +12,27 @@ class admController extends sessionController
   function __construct()
   {
     parent::__construct();
-    
     $this->view = new admView();
+    $this->logueado = new usersView();
     $this->productoModel = new productoModel();
     $this->marcaModel = new marcaModel();
     $this->usuarioModel = new usersModel();
-
-    
-
   }
+  
   function index(){
     $usuarios = $this->usuarioModel->GetUsuarios();
     $productos = $this->productoModel->GetProductos();
     $marcas = $this->marcaModel->GetMarcas();
     $this->view->Index($this->titulo,$productos,$marcas,$usuarios);
   }
+
+  function indexLogueado(){
+    $usuarios = $this->usuarioModel->GetUsuarios();
+    $productos = $this->productoModel->GetProductos();
+    $marcas = $this->marcaModel->GetMarcas();
+    $this->logueado->indexLogueado($this->titulo,$productos,$marcas,$usuarios);
+  }
+
   function borrarProducto($params) {
     $idProducto = $params[0];
     $this->productoModel->borrarProducto($idProducto);
@@ -153,18 +159,47 @@ class admController extends sessionController
   
   function borrarImagen($params){
     $idProducto = $params[0];
-    $imagen = $params[1];
-    $this->productoModel->borrarImagen($idProducto);
+    $getimagen = $this->productoModel->getImage($idProducto);
+    $ruta = implode("", $getimagen);
+    unlink($ruta);
+    $borrarImagen = $this->productoModel->borrarImagen($idProducto);
     header('Location: '.PRODUCTOADMIN.'/'.$idProducto);
   }
-
-  function cambiarImagen($params){
+/*
+  function getImage($params){
     $idProducto = $params[0];
-    $newImg = $_FILES['input_name']['tmp_name'];
-    $this->productoModel->cambiarImagen($idProducto,$img,$newImg);
-    header('Location: '.DETALLEADMIN.'/'.$idProducto);
-  }
+    $imagen = $this->productoModel->getImage($idProducto);
+    $test = implode("", $imagen);
+    var_dump($test);
+    
+  } */
 
+  function cambiarImagen22222($params){
+    $idProducto = $params[0];
+    
+      if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg" || $_FILES['input_name']['type'] == "image/png" ) {
+            $this->productoModel->cambiarImagen($idProducto, $_FILES['input_name']['tmp_name']);
+            header('Location: '.PRODUCTOADMIN.'/'.$idProducto);
+  }
+  else {
+    header('Location: '.PRODUCTOADMIN.'/'.$idProducto);
+  }
+}
+
+
+
+function cambiarImagen($params){
+  $idProducto = $params[0];
+
+      if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg" 
+          || $_FILES['input_name']['type'] == "image/png" ) {
+            $this->productoModel->cambiarImagen($idProducto, $_FILES['input_name']['tmp_name']);
+            header('Location: '.PRODUCTOADMIN.'/'.$idProducto);
+      }
+      else {
+        echo "error";
+      }
+  }
 }
 
 ?>

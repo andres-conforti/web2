@@ -39,6 +39,12 @@ class productoController extends Controller
     //echo "<pre>".print_r($producto,TRUE)."</pre>";
     $this->view->filtrado($producto);
   }
+  public function detalleProductoLogueado($params){
+    $id_producto = $params[0];
+    $producto =$this->model->GetProducto($id_producto);
+    $marca=$this->marcaModel->GetMarca($producto);
+    $this->view->detalleProductoLogueado($producto[0],$marca[0]);
+  }
 
 }
 ?>

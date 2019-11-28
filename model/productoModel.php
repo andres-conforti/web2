@@ -19,14 +19,12 @@ class productoModel extends Model
   function GetProducto($id_producto){
     $sentencia = $this->db->prepare( "SELECT * from producto where id_producto=?");
     $sentencia->execute(array($id_producto));
-
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
   function GetProductoFiltrado($id_marca){
     $sentencia = $this->db->prepare( "SELECT * from producto where id_marca=?");
     $sentencia->execute(array($id_marca));
-
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
@@ -39,7 +37,6 @@ class productoModel extends Model
     $pathImg = null;
     if ($imagen)
         $pathImg = $this->uploadImage($imagen);
-
         $sentencia = $this->db->prepare("INSERT INTO producto(nombre, descripcion, precio, id_marca, imagen) VALUES(?,?,?,?,?)");
         $sentencia->execute([$nombreProducto, $descripcion, $precio, $marca, $pathImg]);
       }
@@ -55,11 +52,25 @@ class productoModel extends Model
     $sentencia->execute(array($nombre,$descripcion,$precio,$id_marca,$imagen,$id_producto));
   }
 
-  function borrarImagen($idProducto){
-    unlink($imagen);
-    $sentencia = $this->db->prepare( "UPDATE producto SET imagen=NULL where id_producto=?");
+  function getImage($idProducto){
+    $sentencia = $this->db->prepare("SELECT imagen from producto where id_producto=?");
     $sentencia->execute(array($idProducto));
+    return $sentencia->fetch(PDO::FETCH_ASSOC);
   }
+
+  function borrarImagen($idProducto){
+    $sentencia = $this->db->prepare("UPDATE producto set imagen=NULL where id_producto=?");
+    $sentencia->execute(array($idProducto));
+    return $sentencia->fetch(PDO::FETCH_ASSOC);
+    }
+
+    public function cambiarImagen($idProducto,$imagen = null) {
+      $pathImg = null;
+      if ($imagen)
+          $pathImg = $this->uploadImage($imagen);
+          $sentencia = $this->db->prepare("UPDATE producto set imagen=? where id_producto=?");
+          $sentencia->execute([$pathImg]);
+        }
 
 }
 

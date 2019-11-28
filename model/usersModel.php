@@ -1,20 +1,13 @@
 <?php
+require_once 'Model.php';
 /**
 *
 */
-class usersModel
+class usersModel extends Model
 {
-  private $db;
-
   function __construct()
   {
-    $this->db = $this->Connect();
-  }
-
-  function Connect(){
-    return new PDO('mysql:host=localhost;'
-    .'dbname=hardware;charset=utf8'
-    , 'root', '');
+    parent::__construct();
   }
 
   function GetUsuarios(){
@@ -28,6 +21,17 @@ class usersModel
     $sentencia->execute(array($user));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
+
+  function InsertarUsuario($user, $pass, $isAdmin){
+    $sentencia = $this->db->prepare("INSERT INTO usuario(username, pass, isAdmin) VALUES(?,?,?)");
+    $sentencia->execute(array($user, $pass, $isAdmin));
+    }
+  
+    function AdminCheck($isAdmin){
+      $sentencia = $this->db->prepare( "select * from usuario where isAdmin=? limit 1");
+      $sentencia->execute(array($isAdmin));
+      return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 }
 

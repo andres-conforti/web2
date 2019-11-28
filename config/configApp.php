@@ -4,19 +4,25 @@ class ConfigApp{
   public static $PARAMS = "params";
   public static $ACTIONS = [
 
-    //user//
+    //guest//
         '' => 'productoController#index',
         'index' => 'productoController#index',
         'marcas' => 'productoController#mostrarMarcas',
         'login'=> 'signinController#login',
         'verificarLogin' => 'signinController#verificarLogin',
         'logout' => 'signinController#logout',
-
         'producto' => 'productoController#detalleProducto',
         'filtrado' => 'productoController#detalleMarca',
-
+    
+    //user//
+        'indexLogueado' => 'admController#indexLogueado',
+        'mostrarMarcasLogueado' => 'productoController#mostrarMarcasLogueado',
+        // usar el de abajo y crearlo 'filtrarLogueado' => 'productoController#filtrarProductosLogueado',
+        'filtradoLogueado' => 'productoController#detalleMarca',
+        'detalleProductoLogueado' => 'productoController#detalleProductoLogueado',
 
     //admin//
+        'InsertUsuario' => 'usersController#InsertUsuario',
 
         //Crear//
         'crearProducto' => 'admController#crearProducto',
@@ -29,6 +35,7 @@ class ConfigApp{
         'borrarProducto' => 'admController#borrarProducto',
         'borrarMarca' => 'admController#borrarMarca',
         'borrarImagen' => 'admController#borrarImagen',
+        'getImage' => 'admController#getImage',
         
 
         //Editar//
@@ -46,6 +53,9 @@ class ConfigApp{
         'productoAdmin'=>'admController#detalleProducto',
         'filtradoAdmin' => 'admController#detalleMarca',
         
+
+
+        //--------------//
 
   ];
 

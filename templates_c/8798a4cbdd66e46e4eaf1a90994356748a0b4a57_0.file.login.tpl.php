@@ -1,31 +1,31 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-25 21:59:46
-  from 'C:\TUDAI\xampp\htdocs\web2\templates\Login\login.tpl' */
+/* Smarty version 3.1.33, created on 2019-11-29 00:49:26
+  from 'C:\TUDAI\xampp\htdocs\web2019\templates\Login\login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ddc40c21e8372_65451320',
+  'unifunc' => 'content_5de05d062364e8_68317403',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'b12f563c2b149ad57e68c2d6c50329c8850d1d49' => 
+    '8798a4cbdd66e46e4eaf1a90994356748a0b4a57' => 
     array (
-      0 => 'C:\\TUDAI\\xampp\\htdocs\\web2\\templates\\Login\\login.tpl',
-      1 => 1573325888,
+      0 => 'C:\\TUDAI\\xampp\\htdocs\\web2019\\templates\\Login\\login.tpl',
+      1 => 1574984825,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:header.tpl' => 1,
-    'file:./loginNav.tpl' => 1,
+    'file:loginNav.tpl' => 1,
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ddc40c21e8372_65451320 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de05d062364e8_68317403 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-$_smarty_tpl->_subTemplateRender("file:./loginNav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+$_smarty_tpl->_subTemplateRender("file:loginNav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <div class="container">
@@ -37,9 +37,9 @@ $_smarty_tpl->_subTemplateRender("file:./loginNav.tpl", $_smarty_tpl->cache_id, 
         <form method="post" action="verificarLogin">
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Email</label>
+                <label for="exampleInputPassword1">Usuario</label>
                 <input type="input" class="form-control" name="usuario" id="usuario" aria-describedby="usuario"
-                    placeholder="Email">
+                    placeholder="Usuario">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Contraseña</label>
@@ -55,12 +55,12 @@ $_smarty_tpl->_subTemplateRender("file:./loginNav.tpl", $_smarty_tpl->cache_id, 
 
     <div class="offset-md-2 col-md-4 login-form loguearse">
 <h1>Registrarse:</h2>
-        <form method="post" action="verificarLogin">
+        <form method="post" action="InsertUsuario">
 
             <div class="form-group">
-                <label for="exampleInputPassword1">Email</label>
+                <label for="exampleInputPassword1">Usuario</label>
                 <input type="input" class="form-control" name="usuario" id="usuario" aria-describedby="usuario"
-                    placeholder="Email">
+                    placeholder="Usuario">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Contraseña</label>

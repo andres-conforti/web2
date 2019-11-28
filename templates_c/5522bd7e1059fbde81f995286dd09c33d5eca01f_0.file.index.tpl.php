@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-25 22:20:02
-  from 'C:\TUDAI\xampp\htdocs\web2\templates\Store\index.tpl' */
+/* Smarty version 3.1.33, created on 2019-11-29 00:42:58
+  from 'C:\TUDAI\xampp\htdocs\web2019\templates\User\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5ddc4582ca3894_65551992',
+  'unifunc' => 'content_5de05b8245c9f0_23643134',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'c7dab7803998ee1201d78e483457734aa06546a0' => 
+    '5522bd7e1059fbde81f995286dd09c33d5eca01f' => 
     array (
-      0 => 'C:\\TUDAI\\xampp\\htdocs\\web2\\templates\\Store\\index.tpl',
-      1 => 1574716801,
+      0 => 'C:\\TUDAI\\xampp\\htdocs\\web2019\\templates\\User\\index.tpl',
+      1 => 1574980460,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:TEMPLATES/navbar.tpl' => 1,
   ),
 ),false)) {
-function content_5ddc4582ca3894_65551992 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de05b8245c9f0_23643134 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:TEMPLATES/navbar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -41,7 +41,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['producto']->value) {
 
 
       <ul class="producto">
-        <a href="producto/<?php echo $_smarty_tpl->tpl_vars['producto']->value['id_producto'];?>
+        <a href="detalleProductoLogueado/<?php echo $_smarty_tpl->tpl_vars['producto']->value['id_producto'];?>
 " class="link"></a>
         <li class="list-group-item">
           <h3><?php echo $_smarty_tpl->tpl_vars['producto']->value['nombre'];?>
