@@ -70,6 +70,7 @@ class admController extends sessionController
     $this->view->crearProducto($this->titulo,$marcas);
   }
 
+
   function formAltaMarca(){
     $nombreMarca = $_POST["nombreMarca"];
     $descripcion = $_POST["descripcionMarca"];
@@ -203,6 +204,35 @@ function cambiarImagen($params){
   function setUsers(){
     $usuarios = $this->usuarioModel->GetUsuarios();
     $this->view->setUsers($usuarios);
+  }
+  
+
+  
+  function formEditarMarcaTEST(){
+    $nombreMarca = $_POST["nombreMarca"];
+    $descripcion = $_POST["descripcionMarca"];
+    $imagen = $_POST["imagenMarca"];
+    $id_marca = $_POST["id_marca"];
+    if ($nombreMarca!="" && $descripcion!="" && $imagen!="" && $id_marca!="") {
+      $this->marcaModel->editarMarca($nombreMarca,$descripcion,$imagen,$id_marca);
+      header('Location: '.MARCASADMIN);
+    }else{
+      echo "error";
+    }
+  }
+
+
+
+  function modificarUser(){
+    $user = $_POST["username"];
+    vardump($user);
+    if ($user!="") {
+      $this->marcaModel->altaMarca($user);
+      header('Location: '.ADMINISTRAR);
+    }else{
+      echo "error";
+      vardump($user);
+    }
   }
 
 
