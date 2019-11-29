@@ -16,13 +16,16 @@ class ConfigApp{
     
     //user//
         'indexLogueado' => 'admController#indexLogueado',
-        'mostrarMarcasLogueado' => 'productoController#mostrarMarcasLogueado',
+        'marcasLogueado' => 'productoController#mostrarMarcasLogueado',
         // usar el de abajo y crearlo 'filtrarLogueado' => 'productoController#filtrarProductosLogueado',
-        'filtradoLogueado' => 'productoController#detalleMarca',
-        'detalleProductoLogueado' => 'productoController#detalleProductoLogueado',
+        'filtradoLogueado' => 'productoController#detalleMarcaLogueado',
+        'detalleLogueado' => 'productoController#detalleProductoLogueado',
 
     //admin//
-        'InsertUsuario' => 'usersController#InsertUsuario',
+        'editarUsuario' => 'admController#setUsers',
+        'modificarUser' => 'admController#modificarUser',
+        'eliminarUser' => 'admController#eliminarUser',
+        
 
         //Crear//
         'crearProducto' => 'admController#crearProducto',

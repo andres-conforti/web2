@@ -43,7 +43,7 @@ class signinController
                         if (!empty($dbUser)&&(password_verify($pass, $dbUser[0]["pass"]))&&$dbUser[0]["isAdmin"] == '0') { //&&(isAdmin[isAdmin]==0)
                         session_start();
                         $_SESSION["nombre"] = $user;
-                        header('Location: '.HOMELOGUEADO);
+                        header('Location: '.HOMEUSER);
                         //print_r("HOLA MUNDO SOY EL USUARIO COMUN");
                     } else {
                           if (!empty($dbUser)&&(password_verify($pass, $dbUser[0]["pass"]) == false)) {

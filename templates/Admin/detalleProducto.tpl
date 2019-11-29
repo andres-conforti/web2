@@ -43,6 +43,33 @@
   <br>
   <br>
 </div>
+
+<div class="row justify-content-md-center">
+<div class="col-md-5 col-lg-5" id="comentarios-container">
+  <label><p>Cargando Comentarios.....</p></label>
+</div>
+
+
+<div class="col-md-3 col-lg-3">
+  <form method="post" >
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Seleccione Puntaje</label>
+      <select class="form-control" id="puntaje">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Comentario</label>
+      <textarea class="form-control" id="comentario" rows="3"></textarea>
+    </div>
+    <button type="button" class="enviar" >Enviar</button>
+  </form>
+</div>
+</div>
 {/foreach}
 
 {include file="footer.tpl"}

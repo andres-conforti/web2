@@ -1,27 +1,34 @@
 {include file="header.tpl"}
-{include file="fix.tpl"}
-{include file="./navbar.tpl"}
+{include file="navUser.tpl"}
+
+<br>
+<div class="container-fluid producto">
+  <div class="row justify-content-md-center">
+    <div class="col-md-5 col-lg-5">
 
 
-<ul class="producto">
+      <ul class="producto">
 
-  <img src="../{$producto['imagen']}" alt="{$producto['nombre']}">
-  <!-- {print_r($producto)} -->
-  <nav class="col-md-6 col-lg-6">
-    <a href="#" class="link"></a>
-    <li class="list-group-item">
-      <h3>{$producto['nombre']} - ${$producto['precio']} - {$marca['nombre']}<h3>
-    </li>
-    <li class="list-group-item">{$producto['descripcion']}</li>
-  </nav>
-</ul>
+        <li class="list-group-item">
+          <h3>{$producto['nombre']} - ${$producto['precio']} - {$marca['nombre']}<h3>
+        </li>
+        <li class="list-group-item">{$producto['descripcion']}</li>
+      </ul>
+    </div>
+    <img src="{BASE_URL}{$producto['imagen']}" alt="{$producto['nombre']}">
+  </div>
+  <br>
+  <br>
 
-<div class="col-lg-8" id="comentarios-container">
+{*comentarios*}
+
+<div class="row justify-content-md-center">
+<div class="col-md-5 col-lg-5" id="comentarios-container">
   <label><p>Cargando Comentarios.....</p></label>
 </div>
 
 
-<div class="col-lg-8">
+<div class="col-md-3 col-lg-3">
   <form method="post" >
     <div class="form-group">
       <label for="exampleFormControlSelect1">Seleccione Puntaje</label>
@@ -40,5 +47,12 @@
     <button type="button" class="enviar" >Enviar</button>
   </form>
 </div>
+</div>
+
+{*comentarios*}
+
+
+</div>
+
 
 {include file="footer.tpl"}

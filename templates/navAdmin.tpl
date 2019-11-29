@@ -26,6 +26,7 @@
       </li>
 
 </li>
+    <li class="nav-item"><a href="{BASE_URL}editarUsuario" class="nav-link">ADMINISTRAR</a></li>
 		<li class="nav-item"><a href="{BASE_URL}logout" class="nav-link">CERRAR SESION</a></li>
 
     </ul>

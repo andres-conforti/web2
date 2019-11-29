@@ -75,6 +75,12 @@ class admView
     $smarty->assign('BASE_URL',BASE_URL);
     $smarty->display('templates/Admin/filtradoAdmin.tpl');
   }
+
+  function setUsers($usuarios){
+    $smarty = new Smarty();
+    $smarty->assign('usuarios',$usuarios);
+    $smarty->display('templates/Admin/setUsers.tpl');
+  }
 }
 
 ?>

@@ -33,11 +33,11 @@ class usersController extends sessionController
         if (isset($_POST["usuario"]) && isset($_POST["pass"]) && $Usuario[0]["username"] == NULL) {
           session_start();
           $_SESSION["nombre"] = $user;
-          header('Location: '.HOMELOGUEADO);
+          header('Location: '.HOMEUSER);
 
             if (isset($_POST["usuario"]) && isset($_POST["pass"])&&$Usuario[0]["username"] !== NULL) {
                     $this->view->mostrarLogin("El usuario ya se encuentra registrado");
-                    header('Location: '.HOME);
+                    header('Location: '.LOGIN);
 
             } else {
                 if (!empty($pass)) {
@@ -47,7 +47,7 @@ class usersController extends sessionController
 
                           if (isset($userRegistrado)) {
                             session_start();
-                            header('Location: '.HOMELOGUEADO);
+                            header('Location: '.HOMEUSER);
 
                             } else {
 

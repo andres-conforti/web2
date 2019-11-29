@@ -186,8 +186,6 @@ class admController extends sessionController
   }
 }
 
-
-
 function cambiarImagen($params){
   $idProducto = $params[0];
 
@@ -200,6 +198,17 @@ function cambiarImagen($params){
         echo "error";
       }
   }
+
+
+  function setUsers(){
+    $usuarios = $this->usuarioModel->GetUsuarios();
+    $this->view->setUsers($usuarios);
+  }
+
+
+
+
+
 }
 
 ?>

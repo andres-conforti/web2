@@ -46,5 +46,15 @@ class productoController extends Controller
     $this->view->detalleProductoLogueado($producto[0],$marca[0]);
   }
 
+  public function detalleMarcaLogueado($params){
+    $id_marca = $params[0];
+    $producto = $this->model->GetProductoFiltrado($id_marca);
+    $this->view->filtradoLogueado($producto);
+  }
+  
+  function mostrarMarcasLogueado(){
+    $marcas = $this->marcaModel->GetMarcas();
+    $this->view->mostrarMarcasLogueado($this->titulo,$marcas);
+  }
 }
 ?>
