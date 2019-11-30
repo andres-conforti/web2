@@ -16,22 +16,31 @@ class usersModel extends Model
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  function GetUser($user){
-    $sentencia = $this->db->prepare( "SELECT * from usuario where username=? limit 1");//user name(en el metodo de arriba tambien)
-    $sentencia->execute(array($user));
+  function GetUser($user,$email){
+    $sentencia = $this->db->prepare( "SELECT * from usuario where username=?,email=?");//user name(en el metodo de arriba tambien)
+    $sentencia->execute(array($user,$email));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  function InsertarUsuario($user, $pass, $isAdmin){
-    $sentencia = $this->db->prepare("INSERT INTO usuario(username, pass, isAdmin) VALUES(?,?,?)");
-    $sentencia->execute(array($user, $pass, $isAdmin));
+  function InsertarUsuario($user, $pass, $isAdmin, $email){
+    $sentencia = $this->db->prepare("INSERT INTO usuario(username, pass, isAdmin, email) VALUES(?,?,?,?)");
+    $sentencia->execute(array($user, $pass, $isAdmin, $email));
     }
   
-    function AdminCheck($isAdmin){
-      $sentencia = $this->db->prepare( "select * from usuario where isAdmin=? limit 1");
-      $sentencia->execute(array($isAdmin));
-      return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+   function AdminCheck($idUser){
+    $sentencia = $this->db->prepare( "SELECT isAdmin from usuario where id_usuario=?");
+    $sentencia->execute(array($idUser));
+    return $sentencia->fetch(PDO::FETCH_ASSOC);
+  }
+  function AdminSet($isAdmin, $idUser){
+    $sentencia = $this->db->prepare("UPDATE usuario set isAdmin=? where id_usuario=?");
+    $sentencia->execute([$isAdmin, $idUser]);
     }
+
+  function BorrarUser($idUser){
+    $sentencia = $this->db->prepare( "DELETE from usuario where id_usuario=?");
+    $sentencia->execute(array($idUser));
+   }
 
 }
 

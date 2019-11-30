@@ -27,35 +27,34 @@ class usersController extends sessionController
   function InsertUsuario()
     {
       $user    = $_POST["usuario"];
+      $email    = $_POST["email"];
       $pass    = $_POST["pass"];
-      $Usuario = $this->model->GetUser($user);
+      $Usuario = $this->model->GetUser($user,$email);
 
-        if (isset($_POST["usuario"]) && isset($_POST["pass"]) && $Usuario[0]["username"] == NULL) {
+        if (isset($_POST["usuario"]) && isset($_POST["pass"]) && isset($_POST["email"])) {
+          if ($Usuario[0]["username"] == NULL && $Usuario[0]["email"] == NULL) {
           session_start();
           $_SESSION["nombre"] = $user;
           header('Location: '.HOMEUSER);
+          if (!empty($pass)) {
+            $hash      = password_hash($pass, PASSWORD_DEFAULT);
+            $isAdmin          = '0';
+            $userRegistrado = $this->model->InsertarUsuario($user,$hash,$isAdmin,$email);
 
-            if (isset($_POST["usuario"]) && isset($_POST["pass"])&&$Usuario[0]["username"] !== NULL) {
-                    $this->view->mostrarLogin("El usuario ya se encuentra registrado");
+                  if (isset($userRegistrado)) {
+                    session_start();
+                    header('Location: '.HOMEUSER);
+
+                    }}
+
+          else ($Usuario[0]["username"] != NULL  || $Usuario[0]["email"] != NULL){
+                    //$this->view->mostrarLogin("El usuario ya se encuentra registrado");
+                    //echo "el usuario ya existe";
                     header('Location: '.LOGIN);
-
-            } else {
-                if (!empty($pass)) {
-                    $hash      = password_hash($pass, PASSWORD_DEFAULT);
-                    $isAdmin          = '0';
-                    $userRegistrado = $this->model->InsertarUsuario($user,$hash,$isAdmin);
-
-                          if (isset($userRegistrado)) {
-                            session_start();
-                            header('Location: '.HOMEUSER);
-
-                            } else {
-
-                                  }
+                  } 
                                 }
                               }
                             }
-                          }
                         }
 
 

@@ -13,7 +13,7 @@
  define("HOMEADMIN" , BASE_URL . "indexAdmin");
  define("MARCASADMIN" , BASE_URL . "marcasAdmin");
  define("PRODUCTOADMIN" , BASE_URL . "productoAdmin");
- define("ADMINISTRAR" , BASE_URL . "setUsers");
+ define("ADMINISTRAR" , BASE_URL . "editarUsuario");
 
  define("PRODUCTO" , BASE_URL . "producto");
  define("IMAGEN" , BASE_URL . "img");

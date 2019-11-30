@@ -5,42 +5,42 @@
   <br>
   <h1 class="text-center">ADMINISTRAR USUARIOS:</h1>
   <br>
-  <div class="row justify-content-md-center">
+  <div class="row justify-content-lg-center">
 
 
 
       {*----------editar permisos--------*}
       <div class="col-lg-3">
+
       <form method="post" action="modificarUser">
-        <select name="usuario" class="form-control filter">
-          <option value="usuario" selected disabled hidden>LISTA DE USUARIOS</option>
+      <h4>Lista de usuarios:</h4>
+        <select name="user" class="form-control filter">
           {foreach from=$usuarios item=usuario}
           {if $usuario['isAdmin'] == "1"}
-          <option value="{$usuarios['id_usuario']}" id="username" name="username"> {$usuario['username']} -
-            ADMINISTRADOR</option>
+          <option value="{$usuario['id_usuario']}" name="user" for="user"> {$usuario['username']} - ADMINISTRADOR</option>
           {else}
-          <option value="{$usuarios['id_usuario']}" id="username" name="username"> {$usuario['username']} - USUARIO
-          </option>
+          <option value="{$usuario['id_usuario']}" name="user" for="user"> {$usuario['username']} - USUARIO</option>
           {/if}
           {/foreach}
         </select>
         <br>
-        <div class="form-group">
-          <button type="submit" class="btn btn-success btn-block">DAR/QUITAR ADMIN</button>
-        </div>
+        <button type="submit" class="btn btn-success btn-block">DAR/QUITAR ADMIN</button>
       </form>
+
     </div>
 
 
     {*----------borrar usuario--------*}
     <div class="offset-lg-1 col-lg-3">
       <form method="post" action="eliminarUser">
-        <select name="usuario" class="form-control filter">
-          <option value="usuario" selected disabled hidden>LISTA DE USUARIOS</option>
+      <h4>Lista de usuarios:</h4>
+        <select name="user" class="form-control filter">
           {foreach from=$usuarios item=usuario}
-
-          <option value="{$usuarios['id_usuario']}"> {$usuario['username']}</option>
-
+          {if $usuario['isAdmin'] == "1"}
+          <option value="{$usuario['id_usuario']}" name="user" for="user"> {$usuario['username']} - ADMINISTRADOR</option>
+          {else}
+          <option value="{$usuario['id_usuario']}" name="user" for="user"> {$usuario['username']} - USUARIO</option>
+          {/if}
           {/foreach}
         </select>
         <br>
@@ -51,27 +51,6 @@
     </div>
     {*----------borrar usuario--------*}
 
-
-
-    <div class="container">
-      <h2>Formulario</h2>
-      <form method="post" action="formEditarMarca">
-        <select name="id_marca" class="form-control filter">
-          <option value="id_marca" selected disabled hidden>LISTA DE USUARIOS</option>
-
-          {foreach from=$usuarios item=usuario}
-          {if $usuario['isAdmin'] == "1"}
-          <option value="{$usuarios['id_usuario']}" id="username" name="username" for="username"> {$usuario['username']}
-            - ADMINISTRADOR</option>
-          {else}
-          <option value="{$usuarios['id_usuario']}" id="username" name="username" for="username"> {$usuario['username']}
-            - USUARIO</option>
-          {/if}
-          {/foreach}
-        </select>
-        <button type="submit" class="btn btn-primary">Editar Marca</button>
-      </form>
-    </div>
   </div>
 </div>
 

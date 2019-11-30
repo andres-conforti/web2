@@ -25,6 +25,7 @@ class ConfigApp{
         'editarUsuario' => 'admController#setUsers',
         'modificarUser' => 'admController#modificarUser',
         'eliminarUser' => 'admController#eliminarUser',
+        'InsertUsuario' => 'usersController#InsertUsuario',
         
 
         //Crear//

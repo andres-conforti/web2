@@ -17,7 +17,9 @@
     </div>
     <img src="{BASE_URL}{$producto['imagen']}" alt="{$producto['nombre']}">
   </div>
+
   <br>
+  <hr class="style14">
   <br>
 
 {*comentarios*}
@@ -40,6 +42,7 @@
         <option>5</option>
       </select>
     </div>
+    
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Comentario</label>
       <textarea class="form-control" id="comentario" rows="3"></textarea>

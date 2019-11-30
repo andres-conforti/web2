@@ -78,8 +78,16 @@ class admView
 
   function setUsers($usuarios){
     $smarty = new Smarty();
+    $smarty->assign('BASE_URL',BASE_URL);
     $smarty->assign('usuarios',$usuarios);
     $smarty->display('templates/Admin/setUsers.tpl');
+  }
+
+  function modificarUser($idUser){
+    $smarty = new Smarty();
+    $smarty->assign('BASE_URL',BASE_URL);
+    $smarty->assign('user',$idUser);
+    $smarty->display('templates/Admin/test.tpl');
   }
 }
 

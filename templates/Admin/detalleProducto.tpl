@@ -41,7 +41,9 @@
   </div>
 
   <br>
+  <hr class="style14">
   <br>
+  
 </div>
 
 <div class="row justify-content-md-center">

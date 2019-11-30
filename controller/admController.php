@@ -190,8 +190,7 @@ class admController extends sessionController
 function cambiarImagen($params){
   $idProducto = $params[0];
 
-      if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg" 
-          || $_FILES['input_name']['type'] == "image/png" ) {
+      if($_FILES['input_name']['type'] == "image/png" ) {
             $this->productoModel->cambiarImagen($idProducto, $_FILES['input_name']['tmp_name']);
             header('Location: '.PRODUCTOADMIN.'/'.$idProducto);
       }
@@ -200,40 +199,37 @@ function cambiarImagen($params){
       }
   }
 
-
   function setUsers(){
     $usuarios = $this->usuarioModel->GetUsuarios();
     $this->view->setUsers($usuarios);
   }
-  
-
-  
-  function formEditarMarcaTEST(){
-    $nombreMarca = $_POST["nombreMarca"];
-    $descripcion = $_POST["descripcionMarca"];
-    $imagen = $_POST["imagenMarca"];
-    $id_marca = $_POST["id_marca"];
-    if ($nombreMarca!="" && $descripcion!="" && $imagen!="" && $id_marca!="") {
-      $this->marcaModel->editarMarca($nombreMarca,$descripcion,$imagen,$id_marca);
-      header('Location: '.MARCASADMIN);
-    }else{
-      echo "error";
-    }
-  }
-
-
 
   function modificarUser(){
-    $user = $_POST["username"];
-    vardump($user);
-    if ($user!="") {
-      $this->marcaModel->altaMarca($user);
-      header('Location: '.ADMINISTRAR);
-    }else{
-      echo "error";
-      vardump($user);
+      if(isset($_POST['user'])){ 
+        $idUser = $_POST['user'];
+        $isAdmin = implode("", $this->usuarioModel->AdminCheck($idUser));
+          if($isAdmin == "1"){
+          $isAdmin = "0";
+          }
+          else{
+          $isAdmin = "1";
+        }
+        $this->usuarioModel->AdminSet($isAdmin, $idUser);
+        header('Location: '.ADMINISTRAR);
     }
   }
+
+  function eliminarUser(){
+    if(isset($_POST['user'])){
+      $idUser = $_POST['user'];
+      $this->usuarioModel->BorrarUser($idUser);
+      header('Location: '.ADMINISTRAR);
+  }
+}
+  
+
+  
+  
 
 
 

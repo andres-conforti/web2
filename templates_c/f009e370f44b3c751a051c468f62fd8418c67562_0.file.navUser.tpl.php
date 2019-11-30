@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-29 22:26:18
-  from 'C:\TUDAI\xampp\htdocs\web2019\templates\navbar.tpl' */
+/* Smarty version 3.1.33, created on 2019-11-30 01:10:12
+  from 'C:\TUDAI\xampp\htdocs\web2019\templates\navUser.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5de18cfa1a46c7_47674243',
+  'unifunc' => 'content_5de1b3640090f0_49408521',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'ecce5ab90b9efe7e17c9ab5347b5e82664eb052b' => 
+    'f009e370f44b3c751a051c468f62fd8418c67562' => 
     array (
-      0 => 'C:\\TUDAI\\xampp\\htdocs\\web2019\\templates\\navbar.tpl',
-      1 => 1574986603,
+      0 => 'C:\\TUDAI\\xampp\\htdocs\\web2019\\templates\\navUser.tpl',
+      1 => 1574988416,
       2 => 'file',
     ),
   ),
@@ -20,15 +20,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5de18cfa1a46c7_47674243 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de1b3640090f0_49408521 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <nav class="navbar navbar-expand-md navbar-dark bg-dark">
    <ul class="navbar-nav mr-auto">
-     <li><a class="navbar-brand" href="<?php echo BASE_URL;?>
+     <li><a class="navbar-brand" href="<?php echo HOMEUSER;?>
 ">HOME</a></li>
      <li><a class="navbar-brand" href="<?php echo BASE_URL;?>
-marcas">MARCAS</a></li>
+marcasLogueado">MARCAS</a></li>
      <li><a class="navbar-brand" href="<?php echo BASE_URL;?>
-login">LOGUEARSE</a></li>
+logout">CERRAR SESION</a></li>
    </ul>
 
  </nav><?php }
