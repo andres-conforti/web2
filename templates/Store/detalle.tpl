@@ -21,7 +21,7 @@
 </div>
 
 <div class="row justify-content-lg-center">
-<div class="col-lg-6" id="comentarios-container">
+<div class="col-lg-8" id="comentarios-container">
   <label><p>Cargando Comentarios.....</p></label>
 </div>
 </div>

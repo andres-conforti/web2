@@ -1,0 +1,14 @@
+
+ <ul class="list-group">
+
+  {{#each comentarios}}
+  <label>
+    <ul class="list-group">
+      <li class="list-group-item disabled">{{id_producto}}</li>
+      <li class="list-group-item disabled">{{userName}}</li>
+      <li class="list-group-item">{{comentario}}</li>
+      <li class="list-group-item">Puntaje: {{puntaje}}</li>
+    </ul>
+  </label>
+  {{/each}}
+</ul>
