@@ -21,12 +21,9 @@
             <div class="form-group">
 
             <button type="submit" class="btn btn-primary btn-block">INGRESAR</button>
-            <br>
-            <a href="{BASE_URL}recuperarCuenta"><p class="offset-lg-2"><strong>...OLVIDE MI CONTRASEÑA</strong></p></a>
-            
-
             </div>
         </form>
+        <a href="{BASE_URL}recuperarPass"><p class="offset-lg-2"><strong>...OLVIDE MI CONTRASEÑA</strong></p></a>
 
         
     </div>

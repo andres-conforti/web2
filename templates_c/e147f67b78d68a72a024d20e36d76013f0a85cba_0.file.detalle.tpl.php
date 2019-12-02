@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-30 01:30:11
+/* Smarty version 3.1.33, created on 2019-12-01 02:05:17
   from 'C:\TUDAI\xampp\htdocs\web2019\templates\User\detalle.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5de1b813224ce0_84977262',
+  'unifunc' => 'content_5de311cde25e08_10355501',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e147f67b78d68a72a024d20e36d76013f0a85cba' => 
     array (
       0 => 'C:\\TUDAI\\xampp\\htdocs\\web2019\\templates\\User\\detalle.tpl',
-      1 => 1575073309,
+      1 => 1575073935,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5de1b813224ce0_84977262 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de311cde25e08_10355501 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navUser.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -75,6 +75,7 @@ echo $_smarty_tpl->tpl_vars['producto']->value['imagen'];?>
         <option>5</option>
       </select>
     </div>
+    
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Comentario</label>
       <textarea class="form-control" id="comentario" rows="3"></textarea>

@@ -1,10 +1,5 @@
 <?php
 
-  /*define('HOME','http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/api/index');
-  define('LOGIN','http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/api/login');
-  define('HOMEADMIN','http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/api/indexAdmin');
-  define('MARCASADMIN','http://'.$_SERVER['SERVER_NAME'] . dirname($_SERVER['PHP_SELF']).'/api/marcasAdmin');*/
-
 abstract class Api{
 
   protected $data;

@@ -18,6 +18,13 @@ class signinView
     $this->Smarty->display('templates/Login/login.tpl');
   }
 
+  
+function recuperarPass(){
+  $smarty = new Smarty();
+  $smarty->assign('BASE_URL',BASE_URL);
+  $smarty->display('templates/Login/recuperar.tpl');
+}
+
   /* Este es el completo (2018)
     function mostrarLogin($Message = ''){
 

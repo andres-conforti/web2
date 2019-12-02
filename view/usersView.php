@@ -25,6 +25,7 @@ class usersView
     //$smarty->display('templates/Admin/administrar.tpl');
 }
 
+
     function Header(){
       $smarty = new Smarty();
       $smarty->assign('BASE_URL',BASE_URL);

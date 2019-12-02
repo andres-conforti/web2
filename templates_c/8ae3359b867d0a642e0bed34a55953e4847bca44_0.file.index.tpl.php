@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-29 22:26:23
+/* Smarty version 3.1.33, created on 2019-12-02 01:51:56
   from 'C:\TUDAI\xampp\htdocs\web2019\templates\Admin\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5de18cffa21fa0_18223023',
+  'unifunc' => 'content_5de4602cc53610_75321955',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8ae3359b867d0a642e0bed34a55953e4847bca44' => 
     array (
       0 => 'C:\\TUDAI\\xampp\\htdocs\\web2019\\templates\\Admin\\index.tpl',
-      1 => 1574718566,
+      1 => 1575166609,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5de18cffa21fa0_18223023 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de4602cc53610_75321955 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navAdmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -36,7 +36,7 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['producto']->value) {
 ?>
-  <div class="row justify-content-md-center">
+  <div class="row justify-content-lg-center">
     <div class="col-md-5 col-lg-5">
       <ul class="producto">
         <a href="<?php echo BASE_URL;?>
@@ -53,7 +53,7 @@ productoAdmin/<?php echo $_smarty_tpl->tpl_vars['producto']->value['id_producto'
 </li>
 
       </ul>
-      <div class="offset-1 col justify-content-md-center">
+      <div class="offset-1 col justify-content-lg-center">
 
         <a href="<?php echo BASE_URL;?>
 editarProducto/<?php echo $_smarty_tpl->tpl_vars['producto']->value['id_producto'];?>

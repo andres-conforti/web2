@@ -56,4 +56,37 @@ class signinController
             }
         }
       }
-    }
+
+      function sendPass(){
+        $email = $_POST["email"];
+        $checkEmail = implode("", $this->model->GetEmail($email));
+        //echo $checkEmail;
+        
+        if (isset($email) && $checkEmail == $email) {
+            $randomPass = $this->generateRandomString();
+            $user = implode("", $this->model->GetCuenta($email));
+            $hash = password_hash($randomPass, PASSWORD_DEFAULT);
+            $this->model->nuevaPass($hash,$user);
+
+            echo "ESTOS DATOS SON ENVIADOS AL EMAIL";
+            echo "<pre> usuario: ".$user."<pre>";
+            echo " password: ".$randomPass."<pre>";
+
+            /*
+            $subject = 'datos de usuario';
+            $message = 'Usuario: '.$user." - Contraseña: ".$randomPass;
+            mail($email,$subject,$message);
+            header('Location: '.LOGIN);
+            */
+                    }
+                       }        
+
+        function recuperarPass(){
+        $this->view->recuperarPass();
+            }
+
+        function generateRandomString($length = 6) {
+            return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
+            }
+            
+        }

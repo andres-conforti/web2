@@ -5,7 +5,7 @@
   <hr class="style14">
   <br>
   {foreach from=$productos item=producto}
-  <div class="row justify-content-md-center">
+  <div class="row justify-content-lg-center">
     <div class="col-md-5 col-lg-5">
       <ul class="producto">
         <a href="{BASE_URL}productoAdmin/{$producto['id_producto']}" class="link"></a>
@@ -17,7 +17,7 @@
         <li class="list-group-item">{$producto['descripcion']}</li>
 
       </ul>
-      <div class="offset-1 col justify-content-md-center">
+      <div class="offset-1 col justify-content-lg-center">
 
         <a href="{BASE_URL}editarProducto/{$producto['id_producto']}"><button type="button"
             class="btn btn-warning btn-sm">EDITAR</button></a>

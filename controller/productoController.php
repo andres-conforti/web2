@@ -15,6 +15,7 @@ class productoController extends Controller
   }
 
   function Index(){
+
     $productos = $this->model->GetProductos();
     $marcas = $this->marcaModel->GetMarcas();
     $this->view->Index($this->titulo,$productos,$marcas);

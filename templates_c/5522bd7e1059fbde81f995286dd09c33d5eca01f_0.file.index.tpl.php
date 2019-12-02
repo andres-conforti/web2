@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-11-30 01:10:11
+/* Smarty version 3.1.33, created on 2019-12-01 01:22:39
   from 'C:\TUDAI\xampp\htdocs\web2019\templates\User\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5de1b363f3b512_27403486',
+  'unifunc' => 'content_5de307cf0e3275_18839843',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:navUser.tpl' => 1,
   ),
 ),false)) {
-function content_5de1b363f3b512_27403486 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5de307cf0e3275_18839843 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 $_smarty_tpl->_subTemplateRender("file:navUser.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

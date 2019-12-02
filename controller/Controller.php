@@ -15,9 +15,7 @@
  define("PRODUCTOADMIN" , BASE_URL . "productoAdmin");
  define("ADMINISTRAR" , BASE_URL . "editarUsuario");
 
- define("PRODUCTO" , BASE_URL . "producto");
- define("IMAGEN" , BASE_URL . "img");
- define("TEMPLATES" , BASE_URL . "templates");
+ define("LOSTPASS" , BASE_URL . "recuperarPass");
 
 
 class Controller

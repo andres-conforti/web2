@@ -10,6 +10,8 @@ class ConfigApp{
         'marcas' => 'productoController#mostrarMarcas',
         'login'=> 'signinController#login',
         'verificarLogin' => 'signinController#verificarLogin',
+        'recuperarPass' => 'signinController#recuperarPass',
+        'sendPass' => 'signinController#sendPass',
         'logout' => 'signinController#logout',
         'producto' => 'productoController#detalleProducto',
         'filtrado' => 'productoController#detalleMarca',
